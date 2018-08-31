@@ -7,6 +7,9 @@ const VECTOR2_DIRECTIONS = [-1, 0, 1]
 var player_direction = Vector2()
 var bullet_counter = 4
 var bullet_resource
+var health = 12
+
+signal died
 
 func _ready():
 	bullet_resource = load(BULLET_PATH)
@@ -39,3 +42,16 @@ func _on_BurstTimer_timeout():
 	$SpriteAttack.visible = true
 	bullet_counter = 0
 	pass # replace with function body
+
+
+func _on_Enemy2Area2D_area_entered(object):
+	if object.name == "PlayerBulletArea2D":
+		health -= object.get_parent().damage
+		object.get_parent().queue_free()
+		if health <= 0:
+			emit_signal("died")
+			for child in get_children():
+				remove_child(child)
+				get_parent().add_child(child)
+			self.queue_free()
+			#get_parent().remove_child(self)

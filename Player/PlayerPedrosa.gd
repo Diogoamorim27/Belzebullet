@@ -77,7 +77,7 @@ func _handle_input(delta):
 			new_bullet.position += new_bullet.direction*BULLET_OFFSET
 			new_bullet.look_at(get_local_mouse_position())
 			add_child(new_bullet)
-			new_bullet.damage = 0
+			new_bullet.damage = 1
 			can_shoot = false
 			emit_signal("shot")
 			
@@ -108,4 +108,8 @@ func _on_Area2D_area_entered(object):
 
 func _on_Player_died():
 	print("GAME OVER!!!!")
-	self.queue_free()
+	get_tree().change_scene("res://GameOver.tscn")
+
+func _on_KinematicBody2D_tree_exited():
+	print("tree exited")
+	pass # replace with function body

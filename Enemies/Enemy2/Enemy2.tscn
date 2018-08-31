@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enemies/Enemy2/Enemy2.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Enemy2/RabbitIdle.png" type="Texture" id=2]
@@ -7,10 +7,10 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 14.2839
+radius = 14.284
 height = 20.0
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Attack"
 length = 1.0
@@ -29,9 +29,8 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "Idle"
 length = 1.0
 loop = true
 step = 0.2
@@ -48,7 +47,13 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="KinematicBody2D" type="RigidBody2D" index="0"]
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 14.284
+height = 20.0
+
+[node name="Enemy2" type="RigidBody2D"]
 
 scale = Vector2( 1.25, 1.25 )
 input_pickable = false
@@ -94,8 +99,8 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 1.15661, -0.89959 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="BurstTimer" type="Timer" parent="." index="3"]
 
@@ -118,12 +123,29 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Attack = SubResource( 3 )
-anims/Idle = SubResource( 2 )
+anims/Attack = SubResource( 2 )
+anims/Idle = SubResource( 3 )
 blend_times = [  ]
+
+[node name="Enemy2Area2D" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2Area2D" index="0"]
+
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="timeout" from="BurstTimer" to="." method="_on_BurstTimer_timeout"]
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_BulletTimer_timeout"]
+
+[connection signal="area_entered" from="Enemy2Area2D" to="." method="_on_Enemy2Area2D_area_entered"]
 
 

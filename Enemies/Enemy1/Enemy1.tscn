@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemies/Enemy1/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Enemy1/HellBat.png" type="Texture" id=2]
@@ -27,7 +27,12 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[node name="KinematicBody2D" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 32.0
+
+[node name="Enemy1" type="RigidBody2D"]
 
 scale = Vector2( 1.46875, 1.46875 )
 input_pickable = false
@@ -90,8 +95,24 @@ playback_speed = 1.0
 anims/Idle = SubResource( 2 )
 blend_times = [  ]
 
+[node name="Enemy1Area2D" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1Area2D" index="0"]
+
+shape = SubResource( 3 )
+
 [connection signal="timeout" from="BulletTimer" to="." method="_on_BulletTimer_timeout"]
 
 [connection signal="timeout" from="BurstTimer" to="." method="_on_BurstTimer_timeout"]
+
+[connection signal="area_entered" from="Enemy1Area2D" to="." method="_on_Enemy1Area2D_area_entered"]
 
 

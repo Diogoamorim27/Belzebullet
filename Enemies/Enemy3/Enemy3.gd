@@ -40,4 +40,7 @@ func _on_Enemy3Area2D_area_entered(object):
 		object.get_parent().queue_free()
 		if health <= 0:
 			emit_signal("died")
+			for child in get_children():
+				remove_child(child)
+				get_parent().add_child(child)
 			self.queue_free()
