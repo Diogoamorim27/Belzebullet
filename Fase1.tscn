@@ -4,7 +4,7 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Enemy3/Enemy3.tscn" type="PackedScene" id=3]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -33,7 +33,7 @@ __meta__ = {
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 928, 562.051 )
+position = Vector2( 813.748, 601.321 )
 scale = Vector2( 2.25, 2.25 )
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="5"]
