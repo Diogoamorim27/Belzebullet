@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://TileTest.res" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Enemy3/Enemy3.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Heart.png" type="Texture" id=4]
 
 [node name="World" type="Node" index="0"]
 
@@ -70,62 +69,5 @@ _sections_unfolded = [ "Limit", "Smoothing" ]
 [node name="KinematicBody2D" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 1409.94, 576 )
-
-[node name="Control" type="Control" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -29.0
-margin_top = 17.0
-margin_right = 1924.0
-margin_bottom = 1095.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1926.0
-margin_bottom = 1092.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 963.0
-margin_top = 546.0
-margin_right = 963.0
-margin_bottom = 546.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-
-[node name="Sprite" type="Sprite" parent="Control/CenterContainer/VBoxContainer" index="0"]
-
-position = Vector2( -882.775, -465.886 )
-scale = Vector2( 4.70111, 4.70111 )
-texture = ExtResource( 4 )
 
 
