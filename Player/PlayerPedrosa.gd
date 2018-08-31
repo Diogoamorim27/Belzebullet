@@ -20,7 +20,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	print("health = ", health)
 	var direction = Vector2()
 	motion = Vector2(0, 0)
 	direction = _handle_input(delta)
@@ -36,11 +35,12 @@ func _process(delta):
 	#HANDLE ANIMATION#
 	if get_global_mouse_position().x < self.global_position.x:
 		$Sprite.flip_h = true
+		$RunSpritesheet.flip_h = true
 	else:
 		$Sprite.flip_h = false
+		$RunSpritesheet.flip_h = false
 		
 	if motion != Vector2() and $AnimationPlayer.current_animation != "Run":
-		print("im running")
 		$AnimationPlayer.play("Run")
 	
 	
@@ -51,8 +51,8 @@ func _handle_input(delta):
 	
 	if !Input.is_action_pressed("motion_key"):
 		if $AnimationPlayer.current_animation != "Idle":
-			$AnimationPlayer.play("Idle")
-		print("hi")
+			#$AnimationPlayer.play("Idle") 
+			pass
 		player_direction = Vector2()
 	if Input.is_action_pressed("ui_up"):
 		player_direction.y = -1

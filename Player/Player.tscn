@@ -124,7 +124,7 @@ scale = Vector2( 1.96429, 1.96429 )
 texture = ExtResource( 3 )
 vframes = 3
 hframes = 3
-frame = 3
+frame = 1
 _sections_unfolded = [ "Animation", "Region" ]
 
 [connection signal="died" from="." to="." method="_on_Player_died"]
