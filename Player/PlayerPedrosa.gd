@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 const SPEED = 10
-const BULLET_PATH = "res://Enemies/Bullet.tscn"
+const BULLET_PATH = "res://CharacterBullet.tscn"
 const BULLET_SPEED = 1000
+const BULLET_OFFSET = 32
 
 var motion = Vector2()
 var bullet_resource
@@ -37,6 +38,7 @@ func _handle_input(delta):
 	var bullet_direction = Vector2()
 	
 	if !Input.is_action_pressed("motion_key"):
+		$AnimationPlayer.play("Idle")
 		player_direction = Vector2()
 	if Input.is_action_pressed("ui_up"):
 		player_direction.y = -1
@@ -58,6 +60,8 @@ func _handle_input(delta):
 			var new_bullet = bullet_resource.instance()
 			new_bullet.direction = get_local_mouse_position().normalized()
 			new_bullet.speed = BULLET_SPEED
+			new_bullet.position += new_bullet.direction*BULLET_OFFSET
+			new_bullet.look_at(get_local_mouse_position())
 			add_child(new_bullet)
 			new_bullet.damage = 0
 			can_shoot = false
@@ -77,15 +81,15 @@ func _on_Area2D_area_entered(object):
 	# note: all objects of type bullet have a damage property
 	emit_signal("got_hit", object.get_parent().damage)
 	print("got hit")
-	health -= object.get_parent().damage
+	#health -= object.get_parent().damage
 
-	if health < 0:
-		get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
-		vidas -= 1 
-		health = 100
-		if vidas < 0:
-			emit_signal("died")
-    # destroy the bullet
+	#if object.name == "new_bullet":
+	get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
+	vidas -= 1 
+	health = 100
+	if vidas < 0:
+		emit_signal("died")
+# destroy the bullet
 	object.queue_free()
 
 func _on_Player_died():
