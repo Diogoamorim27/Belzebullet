@@ -33,12 +33,26 @@ func _process(delta):
 	position.x = clamp(position.x, 0, 1872)
 	position.y = clamp(position.y, 32, 1050)
 	
+	#HANDLE ANIMATION#
+	if get_global_mouse_position().x < self.global_position.x:
+		$Sprite.flip_h = true
+	else:
+		$Sprite.flip_h = false
+		
+	if motion != Vector2() and $AnimationPlayer.current_animation != "Run":
+		print("im running")
+		$AnimationPlayer.play("Run")
+	
+	
+	
 func _handle_input(delta):
 	var player_direction = Vector2()
 	var bullet_direction = Vector2()
 	
 	if !Input.is_action_pressed("motion_key"):
-		$AnimationPlayer.play("Idle")
+		if $AnimationPlayer.current_animation != "Idle":
+			$AnimationPlayer.play("Idle")
+		print("hi")
 		player_direction = Vector2()
 	if Input.is_action_pressed("ui_up"):
 		player_direction.y = -1
@@ -49,11 +63,11 @@ func _handle_input(delta):
 	if Input.is_action_pressed("ui_right"):
 		player_direction.x = 1
 #		speed = min(speed + ACCELERATION, MAX_SPEED)
-		$Sprite.flip_h = false
+		#$Sprite.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		player_direction.x = -1
 #		speed = min(speed + ACCELERATION, MAX_SPEED)
-		$Sprite.flip_h = true
+		#$Sprite.flip_h = true
 
 	if Input.is_action_pressed("mouse_click"):
 		if can_shoot == true:
@@ -79,7 +93,7 @@ func _on_Player_shot():
 func _on_Area2D_area_entered(object):
 	# we got hit by a bullet
 	# note: all objects of type bullet have a damage property
-	emit_signal("got_hit", object.get_parent().damage)
+	#emit_signal("got_hit", object.get_parent().damage)
 	print("got hit")
 	#health -= object.get_parent().damage
 
