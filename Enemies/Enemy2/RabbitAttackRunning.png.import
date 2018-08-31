@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HellBat.png-ba9b16b37ffd1dcf76dfca119ef9d7b7.stex"
+path="res://.import/RabbitAttackRunning.png-0cdeb9ce4ff49a6a070a9562d3d69295.stex"
 
 [deps]
 
-source_file="res://Enemies/HellBat.png"
-dest_files=[ "res://.import/HellBat.png-ba9b16b37ffd1dcf76dfca119ef9d7b7.stex" ]
+source_file="res://Enemies/Enemy2/RabbitAttackRunning.png"
+dest_files=[ "res://.import/RabbitAttackRunning.png-0cdeb9ce4ff49a6a070a9562d3d69295.stex" ]
 
 [params]
 

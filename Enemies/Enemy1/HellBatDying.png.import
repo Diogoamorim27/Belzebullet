@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RabbitIdle.png-a6286fededbea7de5916ea75d2f104ff.stex"
+path="res://.import/HellBatDying.png-25810dfae1c9941b5a5e206e69d59172.stex"
 
 [deps]
 
-source_file="res://RabbitIdle.png"
-dest_files=[ "res://.import/RabbitIdle.png-a6286fededbea7de5916ea75d2f104ff.stex" ]
+source_file="res://Enemies/Enemy1/HellBatDying.png"
+dest_files=[ "res://.import/HellBatDying.png-25810dfae1c9941b5a5e206e69d59172.stex" ]
 
 [params]
 

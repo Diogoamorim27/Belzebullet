@@ -5,7 +5,7 @@ const BULLET_PATH = "res://Enemies/Bullet.tscn"
 const VECTOR2_DIRECTIONS = [-1, 0, 1]
 
 var player_direction = Vector2()
-var bullet_counter = 0 #4
+var bullet_counter = 4
 var bullet_resource
 
 func _ready():
@@ -17,6 +17,7 @@ func _process(delta):
 	pass
 
 func _on_BulletTimer_timeout():
+	$AnimationPlayer.play("Attack")
 	if bullet_counter < 3:
 		for direction_x in VECTOR2_DIRECTIONS:
 			for direction_y in VECTOR2_DIRECTIONS:
@@ -26,7 +27,15 @@ func _on_BulletTimer_timeout():
 					new_bullet.speed = BULLET_SPEED
 					add_child(new_bullet)
 		bullet_counter += 1
+	else:
+		$SpriteIdle.visible = true
+		$SpriteAttack.visible = false
+		$AnimationPlayer.play("Idle")
+		
+		
 
 func _on_BurstTimer_timeout():
+	$SpriteIdle.visible = false
+	$SpriteAttack.visible = true
 	bullet_counter = 0
 	pass # replace with function body

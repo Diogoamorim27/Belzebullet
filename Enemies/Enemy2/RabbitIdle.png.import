@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RabbitAttackRunning.png-4f2ef3de24847001afea17b1de498b15.stex"
+path="res://.import/RabbitIdle.png-f9a0f4bb1e2349c41300f918ec59e358.stex"
 
 [deps]
 
-source_file="res://RabbitAttackRunning.png"
-dest_files=[ "res://.import/RabbitAttackRunning.png-4f2ef3de24847001afea17b1de498b15.stex" ]
+source_file="res://Enemies/Enemy2/RabbitIdle.png"
+dest_files=[ "res://.import/RabbitIdle.png-f9a0f4bb1e2349c41300f918ec59e358.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

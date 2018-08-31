@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://TileTest.res" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Enemy3/Enemy3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Control.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Enemy1/Enemy1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/Enemy2/Enemy2.tscn" type="PackedScene" id=6]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -34,6 +36,7 @@ __meta__ = {
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 929.555, 556.005 )
 scale = Vector2( 2.25, 2.25 )
 
@@ -72,6 +75,7 @@ position = Vector2( 1409.94, 576 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -79,6 +83,17 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Control" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+
+[node name="KinematicBody2D2" parent="." index="4" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 436.241, 445.261 )
+
+[node name="KinematicBody2D" parent="KinematicBody2D2" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 15.1354, 169.997 )
 
 
 [editable path="CanvasLayer/Control"]

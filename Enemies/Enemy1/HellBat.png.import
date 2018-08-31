@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HellBatDying.png-ef98e149c4bfadd6a6ea14921b08bb59.stex"
+path="res://.import/HellBat.png-89842234ffb6ecc83683f28a7674f7ef.stex"
 
 [deps]
 
-source_file="res://Enemies/HellBatDying.png"
-dest_files=[ "res://.import/HellBatDying.png-ef98e149c4bfadd6a6ea14921b08bb59.stex" ]
+source_file="res://Enemies/Enemy1/HellBat.png"
+dest_files=[ "res://.import/HellBat.png-89842234ffb6ecc83683f28a7674f7ef.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

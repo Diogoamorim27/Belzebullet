@@ -65,7 +65,7 @@ shape = SubResource( 1 )
 [node name="BurstTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 14.0
+wait_time = 7.0
 one_shot = false
 autostart = true
 

@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Enemies/Enemy1.gd" type="Script" id=1]
-[ext_resource path="res://Enemies/HellBat.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Enemy1/Enemy1.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy1/HellBat.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 20.0
+radius = 32.0
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "idle"
-length = 0.5
+resource_name = "Idle"
+length = 0.6
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -24,11 +24,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 0, 1, 2, 3, 4 ]
+"values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
 [node name="KinematicBody2D" type="RigidBody2D"]
 
+scale = Vector2( 1.46875, 1.46875 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -48,44 +49,45 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-scale = Vector2( 1.92857, 1.92857 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0, 8 )
+scale = Vector2( 3.94643, 3.94643 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 2
-frame = 1
-_sections_unfolded = [ "Animation", "Region", "Visibility" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-visible = false
-scale = Vector2( 0.934783, 0.717391 )
-shape = SubResource( 1 )
+_sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="BulletTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 0.3
+wait_time = 0.15
 one_shot = false
 autostart = true
 
 [node name="BurstTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 3.0
+wait_time = 2.0
 one_shot = false
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 2 )
+anims/Idle = SubResource( 2 )
 blend_times = [  ]
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_BulletTimer_timeout"]
