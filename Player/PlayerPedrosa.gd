@@ -40,7 +40,7 @@ func _process(delta):
 		$Sprite.flip_h = false
 		$RunSpritesheet.flip_h = false
 		
-	if motion != Vector2() and $AnimationPlayer.current_animation != "Run":
+	if motion and $AnimationPlayer.current_animation != "Run":
 		$AnimationPlayer.play("Run")
 	
 	
@@ -50,8 +50,8 @@ func _handle_input(delta):
 	var bullet_direction = Vector2()
 	
 	if !Input.is_action_pressed("motion_key"):
-		if $AnimationPlayer.current_animation != "Idle":
-			#$AnimationPlayer.play("Idle") 
+		if ($AnimationPlayer.current_animation != "Idle"):
+			$AnimationPlayer.queue("Idle") 
 			pass
 		player_direction = Vector2()
 	if Input.is_action_pressed("ui_up"):
