@@ -22,7 +22,7 @@ func _on_BulletTimer_timeout():
 		new_bullet.direction = $RayCast2D.cast_to.normalized()
 		new_bullet.speed = BULLET_SPEED
 		add_child(new_bullet)
-		new_bullet.damage = 50
+		new_bullet.damage = 100
 		bullet_counter += 1
 
 func _on_BurstTimer_timeout():

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://TileTest.res" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Enemy3/Enemy3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Control.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node" index="0"]
 
@@ -39,7 +40,6 @@ scale = Vector2( 2.25, 2.25 )
 [node name="Camera2D" type="Camera2D" parent="Player" index="5"]
 
 position = Vector2( -6.10352e-05, -3.05176e-05 )
-scale = Vector2( 1, 1 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -70,4 +70,19 @@ _sections_unfolded = [ "Limit", "Smoothing" ]
 
 position = Vector2( 1409.94, 576 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
 
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
+
+[node name="Lifes" parent="CanvasLayer/Control" index="1"]
+
+editor/display_folded = false
+
+
+[editable path="CanvasLayer/Control"]

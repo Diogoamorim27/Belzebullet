@@ -8,6 +8,7 @@ var motion = Vector2()
 var bullet_resource
 var can_shoot = true
 var health = 100.0
+var vidas = 3
 
 signal shot
 signal got_hit(damage)
@@ -79,7 +80,11 @@ func _on_Area2D_area_entered(object):
 	health -= object.get_parent().damage
 
 	if health < 0:
-		emit_signal("died")
+		get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
+		vidas -= 1 
+		health = 100
+		if vidas < 0:
+			emit_signal("died")
     # destroy the bullet
 	object.queue_free()
 
