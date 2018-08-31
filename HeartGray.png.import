@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Heart.png-ddb598aaaaa844aa51574f4e49e0f899.stex"
+path="res://.import/HeartGray.png-fe7d24d94ec8bc417d657054dcc43960.stex"
 
 [deps]
 
-source_file="res://Heart.png"
-dest_files=[ "res://.import/Heart.png-ddb598aaaaa844aa51574f4e49e0f899.stex" ]
+source_file="res://HeartGray.png"
+dest_files=[ "res://.import/HeartGray.png-fe7d24d94ec8bc417d657054dcc43960.stex" ]
 
 [params]
 
@@ -26,4 +26,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=4.0
+svg/scale=1.0
