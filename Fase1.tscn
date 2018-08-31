@@ -7,16 +7,43 @@
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 960, 528 )
+position = Vector2( 1904, 1088 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1920, 1080 )
+region_rect = Rect2( 0, 0, 3840, 2160 )
 _sections_unfolded = [ "Region" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 editor/display_folded = false
-position = Vector2( 1024, 592 )
+position = Vector2( 1920, 1088 )
 scale = Vector2( 3.14062, 3.14062 )
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="4"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = 0
+limit_right = 3840
+limit_bottom = 2480
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit" ]
 
 
