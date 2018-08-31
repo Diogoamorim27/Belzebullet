@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const BULLET_SPEED = 300
-const BULLET_PATH = "res://Bullet.tscn"
+const BULLET_PATH = "res://Enemies/Bullet.tscn"
 
 var player_direction = Vector2()
 var bullet_counter = 4

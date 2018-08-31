@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Enemies/Path2D.gd" type="Script" id=1]
-[ext_resource path="res://Enemies/Enemy1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Enemy1/Path2D.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy1/Enemy1.tscn" type="PackedScene" id=2]
+
+
 
 
 
