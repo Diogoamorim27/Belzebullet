@@ -29,7 +29,7 @@ tracks/0/keys = {
 
 [node name="KinematicBody2D" type="RigidBody2D" index="0"]
 
-position = Vector2( 608, 352 )
+position = Vector2( 1088, 576 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -65,7 +65,7 @@ shape = SubResource( 1 )
 [node name="BurstTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 20.0
+wait_time = 14.0
 one_shot = false
 autostart = true
 
