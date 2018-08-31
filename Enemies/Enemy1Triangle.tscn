@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemies/Path2D.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy1.tscn" type="PackedScene" id=2]
+
+
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 256, 160, 0, 0, 0, 0, 608, 160, 0, 0, 0, 0, 430, 460, 0, 0, 0, 0, 256, 160 )
+}
+
+[node name="Path2D" type="Path2D"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+position = Vector2( -260, -160 )
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
+
+position = Vector2( 256, 160 )
+rotation = 3.14159
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="KinematicBody2D" parent="PathFollow2D" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -1.10805, 1.10805 )
+rotation = -3.14159
+
+
