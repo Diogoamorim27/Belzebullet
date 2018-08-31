@@ -26,7 +26,6 @@ func _on_BulletTimer_timeout():
 		bullet_counter += 1
 
 func _on_BurstTimer_timeout():
-		
 	player_direction = (get_parent().get_node("Player").position - self.position).normalized()
 	#print(player_direction)
 	bullet_counter = 0

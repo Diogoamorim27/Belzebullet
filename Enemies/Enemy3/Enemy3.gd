@@ -7,12 +7,16 @@ const VECTOR2_DIRECTIONS = [-1, 0, 1]
 var player_direction = Vector2()
 var bullet_counter = 0 #4
 var bullet_resource
+var health = 5
+
+signal died
 
 func _ready():
 	bullet_resource = load(BULLET_PATH)
 	pass
 
 func _process(delta):
+	#print(health)
 	#player_direction = get_global_mouse_position().normalized()
 	pass
 
@@ -28,3 +32,12 @@ func _on_BulletTimer_timeout():
 func _on_BurstTimer_timeout():
 	bullet_counter = 0
 	pass # replace with function body
+
+
+func _on_Enemy3Area2D_area_entered(object):
+	if object.name == "PlayerBulletArea2D":
+		health -= object.get_parent().damage
+		object.get_parent().queue_free()
+		if health <= 0:
+			emit_signal("died")
+			self.queue_free()

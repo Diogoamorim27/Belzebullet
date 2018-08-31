@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemies/Enemy3/Enemy3.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Enemy1/HellBat.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30, 30 )
+radius = 9.0
 
 [sub_resource type="Animation" id=2]
 
@@ -27,7 +27,12 @@ tracks/0/keys = {
 "values": [ Vector2( -50, 50 ), Vector2( -50, -50 ) ]
 }
 
-[node name="KinematicBody2D" type="RigidBody2D" index="0"]
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 9.0
+
+[node name="Enemy3" type="RigidBody2D"]
 
 position = Vector2( 1088, 576 )
 input_pickable = false
@@ -55,17 +60,22 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Visibility" ]
+region_enabled = true
+region_rect = Rect2( 6, 4, 16, 16 )
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+scale = Vector2( 4, 4 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="BurstTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 7.0
+wait_time = 14.0
 one_shot = false
 autostart = true
 
@@ -94,8 +104,26 @@ cast_to = Vector2( -50, -34.2345 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
+[node name="Enemy3Area2D" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3Area2D" index="0"]
+
+scale = Vector2( 4, 4 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="timeout" from="BurstTimer" to="." method="_on_BurstTimer_timeout"]
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_BulletTimer_timeout"]
+
+[connection signal="area_entered" from="Enemy3Area2D" to="." method="_on_Enemy3Area2D_area_entered"]
 
 

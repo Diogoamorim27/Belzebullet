@@ -7,8 +7,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 2.8
-height = 5.6
+radius = 3.0
+height = 6.0
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -54,18 +54,20 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -76,7 +78,6 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -1, 0 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -90,7 +91,6 @@ autostart = false
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-visible = false
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 2
@@ -101,7 +101,6 @@ _sections_unfolded = [ "Animation", "Region", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -1, 0 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -124,7 +123,7 @@ scale = Vector2( 1.96429, 1.96429 )
 texture = ExtResource( 3 )
 vframes = 3
 hframes = 3
-frame = 7
+frame = 1
 _sections_unfolded = [ "Animation", "Region" ]
 
 [connection signal="died" from="." to="." method="_on_Player_died"]
@@ -132,6 +131,8 @@ _sections_unfolded = [ "Animation", "Region" ]
 [connection signal="shot" from="." to="." method="_on_Player_shot"]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_ShotTimer_timeout"]
 
