@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const SPEED = 5
+const SPEED = 10
 const BULLET_PATH = "res://Enemies/Bullet.tscn"
-const BULLET_SPEED = 300
+const BULLET_SPEED = 1000
 
 var motion = Vector2()
 var bullet_resource
@@ -28,6 +28,8 @@ func _process(delta):
 	else:
 		motion = direction.normalized() * SPEED
 	move_and_collide(motion)
+	position.x = clamp(position.x, 0, 1872)
+	position.y = clamp(position.y, 32, 1050)
 	
 func _handle_input(delta):
 	var player_direction = Vector2()
@@ -74,7 +76,7 @@ func _on_Area2D_area_entered(object):
 	# note: all objects of type bullet have a damage property
 	emit_signal("got_hit", object.get_parent().damage)
 	print("got hit")
-	health -= object.damage
+	health -= object.get_parent().damage
 
 	if health < 0:
 		emit_signal("died")

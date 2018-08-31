@@ -22,7 +22,7 @@ _data = {
 "points": PoolVector2Array(  )
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
