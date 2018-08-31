@@ -18,11 +18,7 @@ curve = SubResource( 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Position2D" type="Position2D" parent="." index="0"]
-
-position = Vector2( 430, 270 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="." index="1"]
+[node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
 
 position = Vector2( 256, 160 )
 rotation = 3.14159
