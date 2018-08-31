@@ -3,10 +3,6 @@
 [ext_resource path="res://Enemies/Enemy1/Path2D.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Enemy1/Enemy1.tscn" type="PackedScene" id=2]
 
-
-
-
-
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0

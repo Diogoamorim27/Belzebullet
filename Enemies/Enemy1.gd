@@ -21,9 +21,9 @@ func _on_BulletTimer_timeout():
 		#new_bullet.position = self.global_position
 		new_bullet.direction = player_direction
 		new_bullet.speed = BULLET_SPEED
-		new_bullet.damage = 50
 		add_child(new_bullet)
-		print(new_bullet.get_instance_id())
+		new_bullet.damage = 100
+		#print(new_bullet.get_instance_id())
 		bullet_counter += 1
 
 
@@ -32,6 +32,6 @@ func _on_BurstTimer_timeout():
 		player_direction = get_local_mouse_position().normalized()
 	else:
 		player_direction = Vetor2()
-	print(player_direction)
+	#print(player_direction)
 	bullet_counter = 0
 	pass # replace with function body

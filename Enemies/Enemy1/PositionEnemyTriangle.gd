@@ -8,4 +8,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	self.position += delta*SPEED*Vector2(1,0)
+	#self.position += delta*SPEED*Vector2(1,0)
+	pass

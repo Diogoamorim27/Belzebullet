@@ -10,14 +10,18 @@ radius = 32.0
 
 [node name="Sprite" type="Sprite"]
 
+position = Vector2( -0.758724, 0.0222893 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Region", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+damage = null
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
-position = Vector2( 0.666667, -0.666667 )
 scale = Vector2( 0.253304, 0.253304 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -26,10 +30,12 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 scale = Vector2( 1.05652, 1.05652 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 
