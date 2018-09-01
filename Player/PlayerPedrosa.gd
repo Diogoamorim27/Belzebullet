@@ -99,7 +99,8 @@ func _on_Area2D_area_entered(object):
 	#health -= object.get_parent().damage
 
 	#if object.name == "new_bullet":
-	get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
+	if get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas) != null:
+		get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
 	vidas -= 1 
 	health = 100
 	if vidas < 0:

@@ -29,6 +29,7 @@ func _stage_changed(new_stage):
 	elif new_stage == "stage5":
 		print("should change state")
 		stage_resource = load(STAGE_RESOURCES[4])
+		$LavaControl.state_1()
 	new_stage_instance = stage_resource.instance()
 	add_child(new_stage_instance)
 	current_stage = new_stage_instance
