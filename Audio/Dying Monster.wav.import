@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/EarthQuake.wav-0b2e2924c2b0c446cd27b09fd4f5b77a.sample"
+path="res://.import/Dying Monster.wav-0fe7a81dc364ec001ab2873ff3773b79.sample"
 
 [deps]
 
-source_file="res://EarthQuake.wav"
-dest_files=[ "res://.import/EarthQuake.wav-0b2e2924c2b0c446cd27b09fd4f5b77a.sample" ]
+source_file="res://Audio/Dying Monster.wav"
+dest_files=[ "res://.import/Dying Monster.wav-0fe7a81dc364ec001ab2873ff3773b79.sample" ]
 
 [params]
 

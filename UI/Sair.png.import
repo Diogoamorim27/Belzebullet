@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CornerLavaTile.png-cab4e364f7be3187006daa05084667ac.stex"
+path="res://.import/Sair.png-c87df9f6df236ddf76dea307f2c1691a.stex"
 
 [deps]
 
-source_file="res://CornerLavaTile.png"
-dest_files=[ "res://.import/CornerLavaTile.png-cab4e364f7be3187006daa05084667ac.stex" ]
+source_file="res://UI/Sair.png"
+dest_files=[ "res://.import/Sair.png-c87df9f6df236ddf76dea307f2c1691a.stex" ]
 
 [params]
 

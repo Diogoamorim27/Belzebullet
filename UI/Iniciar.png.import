@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Iniciar.png-d198b3335ee767626d601cbd41b49268.stex"
+path="res://.import/Iniciar.png-322f544b7e802d83666976fa5801e502.stex"
 
 [deps]
 
-source_file="res://Iniciar.png"
-dest_files=[ "res://.import/Iniciar.png-d198b3335ee767626d601cbd41b49268.stex" ]
+source_file="res://UI/Iniciar.png"
+dest_files=[ "res://.import/Iniciar.png-322f544b7e802d83666976fa5801e502.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sair.png-0651c0ac68896770467c711b1be4b6f9.stex"
+path="res://.import/New Piskel(1).png-b60d2c2538e9c5b24ac04f9a4a8f670f.stex"
 
 [deps]
 
-source_file="res://Sair.png"
-dest_files=[ "res://.import/Sair.png-0651c0ac68896770467c711b1be4b6f9.stex" ]
+source_file="res://Sprites/New Piskel(1).png"
+dest_files=[ "res://.import/New Piskel(1).png-b60d2c2538e9c5b24ac04f9a4a8f670f.stex" ]
 
 [params]
 

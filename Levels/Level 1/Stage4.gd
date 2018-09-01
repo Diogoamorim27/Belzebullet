@@ -1,13 +1,27 @@
-extends Path2D
-
-signal change_state
+extends Node
 
 var deaths = 0
+signal change_stage
 
 func _ready():
-	connect("change_state", get_parent(), "_stage_changed")
+	connect("change_stage", get_parent(), "_stage_changed")
 	pass
 
+func _process(delta):
+	if deaths == 3:
+		emit_signal("change_state", "state5")
+
+
+func _on_Enemy1_died():
+	deaths +=1
+	pass # replace with function body
+
+
 func _on_Enemy2_died():
-	emit_signal("change_state", "stage5")
+	deaths +=1
+	pass # replace with function body
+
+
+func _on_Enemy3_died():
+	deaths +=1
 	pass # replace with function body

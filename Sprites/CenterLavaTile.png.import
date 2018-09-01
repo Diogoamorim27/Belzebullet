@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/New Piskel(1).png-7fa47446a29c3f53ac900ae7f9309558.stex"
+path="res://.import/CenterLavaTile.png-f9cd31ac68e3024a89fbd37fabe1657c.stex"
 
 [deps]
 
-source_file="res://New Piskel(1).png"
-dest_files=[ "res://.import/New Piskel(1).png-7fa47446a29c3f53ac900ae7f9309558.stex" ]
+source_file="res://Sprites/CenterLavaTile.png"
+dest_files=[ "res://.import/CenterLavaTile.png-f9cd31ac68e3024a89fbd37fabe1657c.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=2
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

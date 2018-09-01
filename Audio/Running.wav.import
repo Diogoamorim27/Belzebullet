@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/ManDying.wav-233955ab75f846fa3afd90edcd22e6df.sample"
+path="res://.import/Running.wav-c251a576b3396c39fa753909d9eac093.sample"
 
 [deps]
 
-source_file="res://ManDying.wav"
-dest_files=[ "res://.import/ManDying.wav-233955ab75f846fa3afd90edcd22e6df.sample" ]
+source_file="res://Audio/Running.wav"
+dest_files=[ "res://.import/Running.wav-c251a576b3396c39fa753909d9eac093.sample" ]
 
 [params]
 

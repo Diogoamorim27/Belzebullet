@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CenterLavaTile.png-4a17fec91743410de60e4a6c416008bf.stex"
+path="res://.import/HeartGray.png-7b87ef3f8d40bbf16878f6027202aaee.stex"
 
 [deps]
 
-source_file="res://CenterLavaTile.png"
-dest_files=[ "res://.import/CenterLavaTile.png-4a17fec91743410de60e4a6c416008bf.stex" ]
+source_file="res://UI/HeartGray.png"
+dest_files=[ "res://.import/HeartGray.png-7b87ef3f8d40bbf16878f6027202aaee.stex" ]
 
 [params]
 
@@ -15,8 +15,8 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=2
-flags/filter=true
+flags/repeat=0
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

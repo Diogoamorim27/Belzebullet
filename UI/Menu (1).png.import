@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeartGray.png-fe7d24d94ec8bc417d657054dcc43960.stex"
+path="res://.import/Menu (1).png-142b306e650d695390a14dfb264f9e74.stex"
 
 [deps]
 
-source_file="res://HeartGray.png"
-dest_files=[ "res://.import/HeartGray.png-fe7d24d94ec8bc417d657054dcc43960.stex" ]
+source_file="res://UI/Menu (1).png"
+dest_files=[ "res://.import/Menu (1).png-142b306e650d695390a14dfb264f9e74.stex" ]
 
 [params]
 

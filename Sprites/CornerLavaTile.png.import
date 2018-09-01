@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Menu (1).png-b83ffbb0613a775de53ff542c1474196.stex"
+path="res://.import/CornerLavaTile.png-b564b4a98d937279d81da89f9cb033a0.stex"
 
 [deps]
 
-source_file="res://Menu (1).png"
-dest_files=[ "res://.import/Menu (1).png-b83ffbb0613a775de53ff542c1474196.stex" ]
+source_file="res://Sprites/CornerLavaTile.png"
+dest_files=[ "res://.import/CornerLavaTile.png-b564b4a98d937279d81da89f9cb033a0.stex" ]
 
 [params]
 

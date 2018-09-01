@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Running.wav-776e0dabcd6e27310a605fc61e82d0b8.sample"
+path="res://.import/FireBall.wav-8ec8d21480f4936adf9a891790e71330.sample"
 
 [deps]
 
-source_file="res://Running.wav"
-dest_files=[ "res://.import/Running.wav-776e0dabcd6e27310a605fc61e82d0b8.sample" ]
+source_file="res://Audio/FireBall.wav"
+dest_files=[ "res://.import/FireBall.wav-8ec8d21480f4936adf9a891790e71330.sample" ]
 
 [params]
 
