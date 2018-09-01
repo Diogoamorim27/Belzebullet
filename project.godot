@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Belzebullet"
-run/main_scene="res://Fase1.tscn"
+run/main_scene="res://Levels/Level 1/Fase1.tscn"
 config/icon="res://New Piskel(1).png"
 
 [display]

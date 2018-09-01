@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Dying Monster.wav-fe48ec82e2701b57f1ef71e76410db5b.sample"
+
+[deps]
+
+source_file="res://Dying Monster.wav"
+dest_files=[ "res://.import/Dying Monster.wav-fe48ec82e2701b57f1ef71e76410db5b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
