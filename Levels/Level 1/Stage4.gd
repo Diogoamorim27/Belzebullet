@@ -1,15 +1,16 @@
 extends Node
 
 var deaths = 0
-signal change_stage
+signal change_state
 
 func _ready():
-	connect("change_stage", get_parent(), "_stage_changed")
+	connect("change_stage", get_parent() "_stage_changed")
 	pass
 
 func _process(delta):
 	if deaths == 3:
-		emit_signal("change_state", "state5")
+		#print("should change state")
+		emit_signal("change_state", "stage5")
 
 
 func _on_Enemy1_died():

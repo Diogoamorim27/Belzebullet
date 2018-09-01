@@ -1,15 +1,27 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var deaths = 0
+
+signal change_state
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	connect("change_state", get_parent(), "_stage_changed")
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	if deaths == 3:
+		pass
+
+
+func _on_Enemy2_died():
+	deaths +=1
+	pass # replace with function body
+
+
+func _on_Enemy1_died():
+	deaths += 1
+	pass # replace with function body
+
+
+func _on_Enemy3_died():
+	deaths +=1
+	pass # replace with function body

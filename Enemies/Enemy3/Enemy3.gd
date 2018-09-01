@@ -31,8 +31,8 @@ func _on_BulletTimer_timeout():
 		bullet_counter += 1
 	
 	else:
-		$SpriteIdle.visible = true
-		$SpriteShooting.visible = false
+		$SpriteIdle.visible = 1
+		$SpriteShooting.visible = 0
 		$AnimationPlayer.play("Idle")
 
 func _on_BurstTimer_timeout():
