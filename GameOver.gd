@@ -16,5 +16,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Fase1.tscn")
+	get_tree().change_scene("res://MainMenu.tscn")
 	pass # replace with function body

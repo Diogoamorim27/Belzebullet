@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/Menu.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://UI/IniciarAper.png" type="Texture" id=5]
 [ext_resource path="res://UI/Sair.png" type="Texture" id=6]
 [ext_resource path="res://UI/SairAper.png" type="Texture" id=7]
+[ext_resource path="res://Audio/MainMenu.ogg" type="AudioStream" id=8]
 
-[node name="CanvasLayer" type="CanvasLayer" index="0"]
+[node name="CanvasLayer" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -90,6 +91,17 @@ texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
 expand = true
 _sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_StartButton_pressed"]
 
 [connection signal="pressed" from="Control/ExitButton" to="." method="_on_ExitButton_pressed"]
 

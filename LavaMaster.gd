@@ -8,8 +8,8 @@ var lava_resource
 
 func _ready():
 	lava_resource = load(LAVA_PATH)
-	state_1()
-	state_2()
+	#state_1()
+	#state_2()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GameOver.png-e80ff3825682d376b7da004cc0739585.stex"
+path="res://.import/GameOver.png-e6d50837636361d39498da0aebfd518f.stex"
 
 [deps]
 
-source_file="res://GameOver.png"
-dest_files=[ "res://.import/GameOver.png-e80ff3825682d376b7da004cc0739585.stex" ]
+source_file="res://UI/GameOver.png"
+dest_files=[ "res://.import/GameOver.png-e6d50837636361d39498da0aebfd518f.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

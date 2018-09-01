@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 # class member variables go here, for example:
 # var a = 2
@@ -13,13 +13,3 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-
-func _on_ExitButton_pressed():
-	get_tree().quit()
-	pass # replace with function body
-
-
-func _on_StartButton_pressed():
-	get_tree().change_scene("res://Levels/Level 1/Fase1.tscn")
-	pass # replace with function body

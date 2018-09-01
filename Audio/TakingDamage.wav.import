@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/TakingDamage.wav-44968ae91b542c09d85c2903d19c399a.sample"
+path="res://.import/TakingDamage.wav-d283ebaed5f79276c448a2f31719aa8d.sample"
 
 [deps]
 
-source_file="res://TakingDamage.wav"
-dest_files=[ "res://.import/TakingDamage.wav-44968ae91b542c09d85c2903d19c399a.sample" ]
+source_file="res://Audio/TakingDamage.wav"
+dest_files=[ "res://.import/TakingDamage.wav-d283ebaed5f79276c448a2f31719aa8d.sample" ]
 
 [params]
 

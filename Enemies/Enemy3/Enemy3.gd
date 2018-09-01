@@ -32,7 +32,7 @@ func _on_BulletTimer_timeout():
 	
 	else:
 		$SpriteIdle.visible = true
-		$SpriteAttack.visible = false
+		$SpriteShooting.visible = false
 		$AnimationPlayer.play("Idle")
 
 func _on_BurstTimer_timeout():
