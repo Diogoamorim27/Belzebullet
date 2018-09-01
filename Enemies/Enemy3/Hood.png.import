@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hood.png-e4a4127cf7da7e0be728cebe07c34012.stex"
+path="res://.import/Hood.png-33e7d8201e9f01dfa39cc6a6b35d6db0.stex"
 
 [deps]
 
-source_file="res://Hood.png"
-dest_files=[ "res://.import/Hood.png-e4a4127cf7da7e0be728cebe07c34012.stex" ]
+source_file="res://Enemies/Enemy3/Hood.png"
+dest_files=[ "res://.import/Hood.png-33e7d8201e9f01dfa39cc6a6b35d6db0.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -21,6 +21,7 @@ func _process(delta):
 	pass
 
 func _on_BulletTimer_timeout():
+	$AnimationPlayer.play("Shooting")
 	if bullet_counter < 25:
 		var new_bullet = bullet_resource.instance()
 		new_bullet.direction = $RayCast2D.cast_to.normalized()
@@ -28,6 +29,11 @@ func _on_BulletTimer_timeout():
 		add_child(new_bullet)
 		new_bullet.damage = 100
 		bullet_counter += 1
+	
+	else:
+		$SpriteIdle.visible = true
+		$SpriteAttack.visible = false
+		$AnimationPlayer.play("Idle")
 
 func _on_BurstTimer_timeout():
 	bullet_counter = 0

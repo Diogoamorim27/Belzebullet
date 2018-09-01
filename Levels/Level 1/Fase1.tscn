@@ -7,7 +7,7 @@
 [ext_resource path="res://Levels/Level 1/Control.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level 1/Stage1.tscn" type="PackedScene" id=6]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 

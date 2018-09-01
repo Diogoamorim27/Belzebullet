@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const BULLET_SPEED = 300
+const BULLET_SPEED = 400
 const BULLET_PATH = "res://Enemies/Bullet.tscn"
 const VECTOR2_DIRECTIONS = [-1, 0, 1]
 
@@ -28,7 +28,7 @@ func _on_BulletTimer_timeout():
 					var new_bullet = bullet_resource.instance()
 					new_bullet.direction = Vector2(direction_x, direction_y).normalized()
 					new_bullet.speed = BULLET_SPEED
-					add_child(new_bullet)
+					get_parent().add_child(new_bullet)
 		bullet_counter += 1
 	else:
 		$SpriteIdle.visible = true
@@ -50,8 +50,4 @@ func _on_Enemy2Area2D_area_entered(object):
 		object.get_parent().queue_free()
 		if health <= 0:
 			emit_signal("died")
-			for child in get_children():
-				remove_child(child)
-				get_parent().add_child(child)
 			self.queue_free()
-			#get_parent().remove_child(self)

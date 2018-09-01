@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-const SPEED = 100
+const SPEED = 150
 var stage2 = false
 
 func _ready():

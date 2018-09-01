@@ -49,6 +49,7 @@ func _handle_input(delta):
 	var player_direction = Vector2()
 	var bullet_direction = Vector2()
 	
+	
 	if !Input.is_action_pressed("motion_key"):
 		if ($AnimationPlayer.current_animation != "Idle"):
 			$AnimationPlayer.queue("Idle") 
