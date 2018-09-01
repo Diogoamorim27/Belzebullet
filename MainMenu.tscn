@@ -9,7 +9,7 @@
 [ext_resource path="res://UI/SairAper.png" type="Texture" id=7]
 [ext_resource path="res://Audio/MainMenu.ogg" type="AudioStream" id=8]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )

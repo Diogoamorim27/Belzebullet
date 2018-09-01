@@ -10,6 +10,7 @@ var bullet_resource
 var can_shoot = true
 var health = 100.0
 var vidas = 3
+var invincible = false
 
 signal shot
 signal got_hit(damage)
@@ -92,26 +93,44 @@ func _on_Player_shot():
 	timer.start()
 
 func _on_Area2D_area_entered(object):
-	# we got hit by a bullet
-	# note: all objects of type bullet have a damage property
-	#emit_signal("got_hit", object.get_parent().damage)
-	print("got hit")
-	#health -= object.get_parent().damage
+	if not invincible:
+		# we got hit by a bullet
+		# note: all objects of type bullet have a damage property
+		#emit_signal("got_hit", object.get_parent().damage)
+		print(object.name)
+		
+		if object.is_class("RigidBody2D") == true:
+			emit_signal("died")
 
-	#if object.name == "new_bullet":
-	if get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas) != null:
-		get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
-	vidas -= 1 
-	health = 100
-	if vidas < 0:
-		emit_signal("died")
-# destroy the bullet
-	object.queue_free()
-
+		if get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas) != null:
+			get_parent().get_node("CanvasLayer/Control/Lifes").get_child(vidas).visible = false
+		vidas -= 1 
+		if vidas < 0:
+			emit_signal("died")
+		# destroy the bullet
+		object.get_parent().queue_free()
+		var invincible_timer = get_node("InvincibilityTimer")
+		invincible_timer.start()
+		$AnimationInvencibilidade.play("Damage")
+		invincible = true
+		pass
+		
 func _on_Player_died():
-	print("GAME OVER!!!!")
+#	if $AnimationPlayer.current_animation != "Die":
+#		$AnimationPlayer.play("Die")
 	get_tree().change_scene("res://GameOver.tscn")
+	
 
 func _on_KinematicBody2D_tree_exited():
 	print("tree exited")
 	pass # replace with function body
+	
+func _on_InvincibilityTimer_timeout():
+	invincible = false
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Die":
+		print("Game Over")
+		
+		

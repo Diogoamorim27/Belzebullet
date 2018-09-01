@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Belzebullet"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://InitialCutscene.tscn"
 config/icon="res://New Piskel(1).png"
 
 [display]
